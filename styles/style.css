@@ -1,0 +1,347 @@
+/* Variables CSS para paleta oscura y profesional */
+:root {
+  --color-primario: #1a1a2e;
+  --color-secundario: #16213e;
+  --color-acento: #f39c12;
+  --color-acento-hover: #e67e22;
+  --color-texto: #e0e0e0;
+  --color-texto-secundario: #b0b0b0;
+  --color-fondo: #121212;
+  --translucido-bg: rgba(20, 20, 20, 0.75);
+  --border-radius: 12px;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Reset y global */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 56px; /* Altura navbar fija */
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav.navbar {
+  background-color: var(--color-primario);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+  padding: 0.6rem 1.2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1030;
+}
+
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+  color: var(--color-texto);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link.active {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+/* Banner - Inicio */
+.inicio-section {
+  background-color: var(--color-primario);
+  padding-bottom: 1rem;
+  text-shadow: 1px 1px 5px #000;
+  text-align: center;
+}
+
+.inicio-section h1 {
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+.inicio-section p.lead {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.inicio-section a.btn {
+  font-weight: 700;
+  background-color: var(--color-acento);
+  border: none;
+  padding: 12px 40px;
+  transition: background-color 0.3s ease;
+  color: var(--color-texto);
+  border-radius: var(--border-radius);
+}
+
+.inicio-section a.btn:hover {
+  background-color: var(--color-acento-hover);
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.banner-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-top: 1rem;
+  border-radius: var(--border-radius);
+  filter: brightness(0.75);
+  transition: filter 0.3s ease;
+}
+
+.banner-img:hover {
+  filter: brightness(1);
+}
+
+/* Servicios */
+#servicios {
+  background-color: var(--color-secundario);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.service-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  background-color: var(--translucido-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  color: var(--color-texto);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px var(--color-acento);
+}
+
+.service-card img {
+  height: 180px;
+  object-fit: cover;
+  border-bottom: none;
+}
+
+.service-card i {
+  margin-bottom: 12px;
+  color: var(--color-acento);
+  transition: color 0.3s ease;
+}
+
+.service-card:hover i {
+  color: var(--color-acento-hover);
+}
+
+/* Equipo */
+#equipo {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.team-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-acento);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px var(--color-acento);
+}
+
+.team-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px var(--color-acento-hover);
+}
+
+/* Clientes */
+#clientes {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.carousel-inner .carousel-item > div {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.carousel-inner .card {
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  background-color: var(--translucido-bg);
+  color: var(--color-texto);
+  padding: 1rem;
+  border: 2px solid transparent;
+  transition: border-color 0.5s ease;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.carousel-inner .card:hover {
+  border-color: var(--color-acento);
+}
+
+.carousel-inner .card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--color-acento);
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Efecto latido (heartbeat) para imagen clientes */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.carousel-inner .card img {
+  animation: heartbeat 3s infinite;
+}
+
+/* Contacto */
+#contacto {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.contact-card {
+  background-color: var(--translucido-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  color: var(--color-texto);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px var(--color-acento);
+}
+
+/* Formulario */
+form {
+  background-color: var(--translucido-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+form label {
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  background-color: #222;
+  border: 1px solid var(--color-acento);
+  color: var(--color-texto);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--color-acento-hover);
+  outline: none;
+  box-shadow: 0 0 10px var(--color-acento-hover);
+  background-color: #1c1c1c;
+}
+
+form .invalid-feedback {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--color-acento);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease;
+  color: var(--color-texto);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-acento-hover);
+  color: var(--color-texto);
+  box-shadow: 0 0 12px var(--color-acento-hover);
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-texto);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: var(--color-texto);
+  transition: color 0.3s ease;
+  margin: 0 8px;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  color: var(--color-acento);
+}
+
+/* Animación emojis del título */
+@keyframes floatEmoji {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+h1 .emoji {
+  display: inline-block;
+  animation: floatEmoji 4s ease-in-out infinite;
+  font-size: 1.5em;
+  cursor: default;
+}
+
+h1 .emoji:nth-child(1) {
+  animation-delay: 0s;
+}
+
+h1 .emoji:nth-child(3) {
+  animation-delay: 2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-img {
+    width: 100px;
+    height: 100px;
+  }
+  .carousel-inner .carousel-item > div {
+    flex-direction: column;
+  }
+  .carousel-inner .card {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
